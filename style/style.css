@@ -1,0 +1,137 @@
+p.des_fmat{
+	margin: 10 10;
+}
+
+span.des_name{
+	color: blue;
+	font-weight: bold;
+}
+
+span.des_effect{
+	color: green;
+	font-weight: bold;
+}
+
+#main{
+	height:400px;
+	width:600px;
+	margin: 0 auto;
+	background-color: #FFFF66;
+}
+
+#new_game{
+	display:block;
+	position: absolute;
+	width: 120;
+	margin: 300 240;
+	background-color: inherit;
+}
+
+button.new{
+	display:inherit;
+	position: absolute;
+	text-align: center;
+	top: 25;
+	width: 80;
+	background-color: #FFFFFF;
+}
+
+#new:hover {
+	background-color: #AAAAAA;
+}
+
+#sc_sel{
+	display: inherit;
+	position: absolute;
+	width:80;
+	background-color: inherit;
+}
+
+#back {
+	float: right;
+	height: 50;
+	width: 50;
+	background-color: #FFFF66;
+}
+
+#back:hover {
+	background-color: #FFFFEE;
+}
+
+#game_container{
+	display:none;
+	position:relative;
+	width:100%;
+}
+
+#game{
+	float:left;
+	position:inherit;
+	display:inherit;
+	width: 800px;
+	left: 50%;
+	margin:0 -400;
+	background-color: #EEEEEE;
+}
+
+#game_cont{
+	position: absolute;
+	top:25%;
+	z-index:10;
+	width:80;
+	margin:0 -40;
+	background-color: #000000;
+}
+
+#weather{
+	float:left;
+	position:inherit;
+	display:inherit;
+	width:100%;
+	height:60%;
+	background-color: #00CCEE;
+}
+
+#weather_w{
+	float:left;
+	position:inherit;
+	display:inherit;
+	left:50%;
+	top:50%;
+	width:400;
+	height:250;
+	margin:-125 -200;
+	background-color: #EEEEEE;
+}
+#weather_chg{
+
+	display:inherit;
+	float:right;
+	height:80;
+	width:25;
+	right:10%;
+	margin: 150;
+	background-color: #888800;
+}
+
+#weather_chg:hover{
+	background-color: #DDDDDD;
+}
+
+#sc{
+	position:inherit;
+	float: left;
+	display:inherit;
+	background-color: #AAAAAA;
+	width: 100%;
+}
+
+#sc_des{
+	display: inherit;
+	position: inherit;
+	float:left;
+	left: 50%;
+	width: 640;
+	margin: 5% -320 5%;
+	background-color: #EEEEEE;
+}
