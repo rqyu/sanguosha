@@ -1,3 +1,4 @@
+<? require("./php/utility.php"); ?>
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
@@ -7,43 +8,9 @@
 
 </head>
 
-<?
-function generate_sc_selection($id){
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
-	mysql_set_charset("UTF8",$conn);
-	$db = mysql_select_db("sanguosha",$conn);
-	$sql = mysql_query("SELECT * FROM scenario");
-	$sel = "<select id=\"".$id."\"><option value=0>随机</option>";
-	while($row=mysql_fetch_array($sql)){
-		$sel = $sel."<option value=".$row["id"].">".$row["name"]."</option>";
-	}
-	$sel = $sel."</select>";
-	echo $sel;
-}
-
-function generate_weather_selection($id){
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
-	mysql_set_charset("UTF8",$conn);
-	$db = mysql_select_db("sanguosha",$conn);
-	$sql = mysql_query("SELECT * FROM weather");
-	$sel = "<select style=\"visibility:inherit\" id=\"".$id."\"><option value=0>随机</option>";
-	while($row=mysql_fetch_array($sql)){
-		$sel = $sel."<option value=".$row["id"].">".$row["name"]."</option>";
-	}
-	$sel = $sel."</select>";
-	echo $sel;
-}
-
-function new_game_bundle($id){
-	generate_sc_selection($id);
-	echo "<button class=\"new\" onclick=\"new_game('".$id."')\">新游戏</button>";
-}
-
-?>
-
 <body>
 <div id="main">
-	<div id="new_game">
+	<div id="new_game" align="center">
 		<div id="sc_sel" align="center">
 			<? new_game_bundle("new_game_sel"); ?>
 		</div>
@@ -51,23 +18,21 @@ function new_game_bundle($id){
 </div>
 <div id="game_container">
 	<div id="game">
-		<div id="game_cont" align="center">
-			<? new_game_bundle("cont_game"); ?>
+		<div id="sun_menu_btn" align="center">
+			<? sun_menu(); ?>
 		</div>
 		<div id="weather">
-			<div id="weather_w">
-				<p id="w_des" class="des_fmat"></p>
+			<div id="weather_des">
 			</div>
-			<div onclick="w()" id="weather_chg">
+			<div id="weather_chg" align="center">
+				<? new_weather_bundle("w_chg_btn"); ?>
 			</div>
 		</div>
 		<div id="sc">
 			<div id="sc_des">
-				<p id="s_des" class="des_fmat"></p>
 			</div>
 		</div>
 	</div>
-	<div id="back" onclick="back_to_main()">Back</div>
 </div>
 </body>
 </html>

@@ -1,67 +1,47 @@
 var new_game=function(from_sel,delay){
 	delay = delay || 150;
 	from_sel = from_sel || "new_game_sel";
-	if(document.getElementById("game_container").style.display!='block') {
+	var value=$("#"+from_sel).value;
+	if($("#game_container").css('display')!='block') {
 	return $("#main").fadeOut(delay,function(){
-				nextWeather();
-  				loadscenario(from_sel);
+				$.get('php/run.php',{'m':'w','n':0},function(data){$('#weather_des').html(data);});
+  				$.get('php/run.php',{'m':'sc','n':value},function(data){$("#sc_des").html(data);});
+  				$('body').css({background:'url(resource/image/game_background.jpg)'});
+        		$('body').css({"background-size":"cover"});
   				$("#game_container").fadeIn(delay);
   			});
 	} else {
 	return $("#game_container").fadeOut(delay,function(){
 				nextWeather();
-  				loadscenario(from_sel);
-  				$("#game_container").fadeIn(delay);
-  			});
+				loadscenario(value);
+				$("#game_container").fadeIn(delay);
+	 		});
 	}
+};
+
+var cont_new_game=function(value,delay){
+	delay = delay||150;
+	value = value||0;
+	return $("#game_container").fadeOut(delay, function() {
+		$.get('php/run.php',{'m':'w','n':0},function(data){$('#weather_des').html(data);});
+		$.get('php/run.php',{'m':'sc','n':value},function(data){$("#sc_des").html(data);});
+		$("#game_container").fadeIn(delay);
+	});
 };
 
 var back_to_main=function(delay){
 	delay = delay || 150;
 	return $("#game_container").fadeOut(delay,function(){
+				$('body').css({background: "url(resource/image/welcome4cc.png)"});
+				$('body').css({"background-size":"cover"});
   				$("#main").fadeIn(delay);});
 };
 
-var w=function(delay){
+var w=function(from_sel, delay){
 	delay=delay||5;
-	return $("#w_des").fadeOut(delay,function(){nextWeather();$("#w_des").fadeIn();});
-}
-
-function nextWeather() {
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("w_des").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	xmlhttp.open("GET","php/run.php?m=w",true);
-	xmlhttp.setRequestHeader('Content-type','text/html','charset=UTF-8');
-	xmlhttp.send();
-}
-
-function loadscenario(from_sel) {
-	var xmlhttp;
-	if (window.XMLHttpRequest)
-	  {// code for IE7+, Firefox, Chrome, Opera, Safari
-	  xmlhttp=new XMLHttpRequest();
-	  }
-	xmlhttp.onreadystatechange=function()
-	  {
-	  if (xmlhttp.readyState==4 && xmlhttp.status==200)
-	    {
-	    document.getElementById("s_des").innerHTML=xmlhttp.responseText;
-	    }
-	  }
-	var s=document.getElementById(from_sel);
-	var n=s.value;
-	xmlhttp.open("GET","php/run.php?m=sc&n="+n,true);
-	document.getElementById(from_sel).value=0;
-	xmlhttp.setRequestHeader('Content-type','text/html','charset=UTF-8');
-	xmlhttp.send();
+	from_sel = from_sel || "w_chg_btn";
+	var n = $('#from_sel').value;
+	return $("#weather_des").fadeOut(delay,function(){
+		$.get('php/run.php',{'m':'w','n':n},function(data){$('#weather_des').html(data);});
+		$("#weather_des").fadeIn();});
 }
