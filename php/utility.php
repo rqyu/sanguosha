@@ -1,7 +1,9 @@
 <?
 
+$host='199.195.141.236';
+
 function generate_sc_selection($id){
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
+	$conn = mysql_connect($host,"sanguosha","sanguosha");
 	mysql_set_charset("UTF8",$conn);
 	$db = mysql_select_db("sanguosha",$conn);
 	$sql = mysql_query("SELECT * FROM scenario");
@@ -15,7 +17,7 @@ function generate_sc_selection($id){
 }
 
 function generate_weather_selection($id){
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
+	$conn = mysql_connect($host,"sanguosha","sanguosha");
 	mysql_set_charset("UTF8",$conn);
 	$db = mysql_select_db("sanguosha",$conn);
 	$sql = mysql_query("SELECT * FROM weather");
@@ -39,7 +41,7 @@ function new_weather_bundle($id,$value=5) {
 }
 
 function sun_menu(){
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
+	$conn = mysql_connect($host,"sanguosha","sanguosha");
 	mysql_set_charset("UTF8",$conn);
 	$db = mysql_select_db("sanguosha",$conn);
 	$sql = mysql_query("SELECT * FROM scenario");
@@ -55,7 +57,7 @@ function sun_menu(){
 
 
 function next_weather($id) {
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
+	$conn = mysql_connect($host,"sanguosha","sanguosha");
 	mysql_set_charset("UTF8",$conn);
 	$db = mysql_select_db("sanguosha",$conn);
 	if($id==0) {
@@ -74,7 +76,7 @@ function next_weather($id) {
 }
 
 function load_sc($id) {
-	$conn = mysql_connect("localhost","sanguosha","sanguosha");
+	$conn = mysql_connect($host,"sanguosha","sanguosha");
 	mysql_set_charset("UTF8",$conn);
 	$db = mysql_select_db("sanguosha",$conn);
 	if($id==0){
