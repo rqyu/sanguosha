@@ -1,0 +1,254 @@
+p.des_fmat{
+	text-shadow: 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF;
+	text-align: center;
+	margin: 10 10;
+}
+
+span.des_name{
+	text-shadow: 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF;
+	color: blue;
+	font-size: 30;
+	font-weight: bold;
+}
+
+span.des_effect{
+	text-shadow: 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF,
+				 0px 0px 15px #FFFFFF;
+	color: green;
+	font-weight: bold;
+}
+
+body {
+	background-image: url("../resource/image/welcome4cc.png");
+	background-size: 100% 100%;
+}
+
+/* main page */
+#main{
+
+	height:300px;
+	width:485px;
+	margin: 0 auto;
+}
+
+#new_game{
+	display:block;
+	position: absolute;
+	width: 198;
+	height: 164;
+	left:50%;
+	margin: 180 -99px;
+	background-image: url('../resource/image/title_bck.png');
+}
+
+button.new_btn, button.w_chg_btn{
+	display:inherit;
+	position: absolute;
+	text-align: center;
+	left:50%;
+	width: 80;
+	margin: auto -40;
+	background-color: #FFFFFF;
+	cursor:hand;
+}
+
+#new:hover {
+	background-color: #AAAAAA;
+}
+
+#sc_sel{
+	display: inherit;
+	position: absolute;
+	width:100%;
+	top:35%;
+	vertical-align: center;
+}
+
+/* gaming page */
+
+	/* gaming page main container */
+#game_container{
+	display:none;
+	position:relative;
+	width:100%;
+	height:100%;
+}
+	/* main game area*/
+#game{
+	float:left;
+	position:inherit;
+	display:inherit;
+	width: 100%;
+	margin:0 0;
+}
+
+#game_cont{
+	position: absolute;
+	top:20%;
+	z-index:10;
+	width:80;
+	margin:0 -40;
+}
+#game_cont:hover{
+	background-color: #FFFFFF;
+}
+	/* Weather area, top half */
+#weather{
+	float:left;
+	position:inherit;
+	display:inherit;
+	width:100%;
+}
+	/* weather description area */
+#weather_des{
+	float:left;
+	position:inherit;
+	display:inherit;
+	width: 350;
+	height: 400;
+	margin: 0 0;
+	background-image: url('../resource/image/bagua3.png');
+	background-repeat: no-repeat;
+	background-size: 350 350;
+}
+
+	/* weather change button */
+#weather_chg{
+	float:inherit;
+	display: inherit;
+	position: absolute;
+	width:80;
+	left:175;
+	top:160;
+	margin: 0 -40;
+	background-color: inherit;
+	z-index:10;
+}
+
+#weather_chg:hover{
+	background-color: inherit;
+}
+	/* Scenario area, bottom half */
+#sc{
+	position:fixed;
+	float: left;
+	display:inherit;
+	width: 100%;
+	bottom:0%;
+}
+	/* scenario description */
+#sc_des{
+	display: inherit;
+	position: inherit;
+	float:left;
+	left: 50%;
+	bottom: 2%;
+	width: 640;
+	margin: 0 -320 0;
+}
+
+#sun_menu_btn{
+	position: absolute;
+	top:50;
+	z-index:10;
+	width:100;
+	height:64;
+	right:150;
+	background-image: url('../resource/image/dao3b.png');
+	background-repeat: no-repeat;
+	background-size: 100px 64px;
+}
+
+#sun_menu_btn div{display: none;}
+
+#sun_menu_btn ul {
+	display: block;
+	font-family: "Century Gothic", Verdana, Arial, Sans-Serif;
+	font-size: 14;
+	list-style: none;
+	float: left;
+	margin: 64 -20;
+	padding:0 0;
+}
+
+#sun_menu_btn ul li ul {display: none; position:absolute;left:66%;top:0;color:black;}
+
+#sun_menu_btn ul li:hover > ul {
+	display:block;
+}
+
+#sun_menu_btn ul li:hover, #sun_menu_btn ul li ul li:hover {
+	cursor: hand;
+	background-color: #000;
+	color:#FFF;
+}
+
+#sun_menu_btn ul li {
+	cursor: hand;
+	-moz-border-radius:15px;
+	-webkit-border-radius:15px;
+	border: 2px solid #AAA;
+	text-align: center;
+	clear: none;
+	margin: 2 18 2 18;
+	padding:2 0 2;
+	width: 80;
+	background-color: #EEE;
+}
+
+#sun_menu_btn:hover {
+	background-image: url("../resource/image/dao3b_replace.png");
+}
+#sun_menu_btn:hover div {
+	display:block;
+}
